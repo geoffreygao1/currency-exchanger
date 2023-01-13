@@ -7,43 +7,44 @@
 
 <body>
   <div class="container">
-    <div class="row">
-      <h1>Exchange Your Currency</h1>
+    <div class="card">
+      <h1 class="card-header">Exchange Your Currency</h1>
+      <div class="row" id="convertForm">
+        <div class="col-5" id="inputForm">
+          <form id="inputCurrencyForm">
+            <input type="number" id="inputValue" min="0">
+            <select name="inputCurrencyType" id="inputCurrencyType">
+              <option value="USD" selected="selected">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="JPY">JPY</option>
+              <option value="GBP">GBP</option>
+              <option value="AUD">AUD</option>
+              <option value="CAD">CAD</option>
+            </select>
+            <span id="inputFlag"></span>
+          </form>
+        </div>
+        <div id="convertSymbol">
+          <div>&#8594;</div>
+        </div>
+        <div class="col-5" id="outputForm">
+          <form id="outputCurrencyForm">
+            <input type="number" id="outputValue" disabled>
+            <select name="outputCurrencyType" id="outputCurrencyType">
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="JPY" selected="selected">JPY</option>
+              <option value="GBP">GBP</option>
+              <option value="AUD">AUD</option>
+              <option value="CAD">CAD</option>
+            </select>
+            <span id="outputFlag"></span>
+          </form>
+        </div>
+      </div>
+      <div class="row" id="error"></div>
+      <div class="card-footer text-muted">Created by Geoffrey Gao (2023)</div>
     </div>
-    <div class="row" id="convertForm">
-      <div class="col-5" id="inputForm">
-        <form id="inputCurrencyForm">
-          <input type="number" id="inputValue" min="0">
-          <select name="inputCurrencyType" id="inputCurrencyType">
-            <option value="USD" selected="selected">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="JPY">JPY</option>
-            <option value="GBP">GBP</option>
-            <option value="AUD">AUD</option>
-            <option value="CAD">CAD</option>
-          </select>
-          <span id="inputFlag"></span>
-        </form>
-      </div>
-      <div id="convertSymbol">
-        <div>&#8594;</div>
-      </div>
-      <div class="col-5" id="outputForm">
-        <form id="outputCurrencyForm">
-          <input type="number" id="outputValue" disabled>
-          <select name="outputCurrencyType" id="outputCurrencyType">
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="JPY" selected="selected">JPY</option>
-            <option value="GBP">GBP</option>
-            <option value="AUD">AUD</option>
-            <option value="CAD">CAD</option>
-          </select>
-          <span id="outputFlag"></span>
-        </form>
-      </div>
-    </div>
-    <div class="row" id="error"></div>
   </div>
 </body>
 
