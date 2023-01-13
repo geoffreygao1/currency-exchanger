@@ -9,29 +9,41 @@
 </head>
 
 <body>
-  <h1>Exchange Your Currency</h1>
-  <form id="currencyForm">
-    <input type="number" id="inputValue">
-    <select name="inputCurrencyType" id="inputCurrencyType">
-      <option value="USD" selected="selected">USD</option>
-      <option value="EUR">EUR</option>
-      <option value="JPY">JPY</option>
-      <option value="GBP">GBP</option>
-      <option value="AUD">AUD</option>
-      <option value="CAD">CAD</option>
-    </select>
-    <div>Convert To:</div>
-    <input type="number" id="outputValue" disabled>
-    <select name="outputCurrencyType" id="outputCurrencyType">
-      <option value="USD">USD</option>
-      <option value="EUR">EUR</option>
-      <option value="JPY" selected="selected">JPY</option>
-      <option value="GBP">GBP</option>
-      <option value="AUD">AUD</option>
-      <option value="CAD">CAD</option>
-    </select>
-  </form>
-  <div id="error"></div>
+  <div class="container">
+    <div class="row">
+      <h1>Exchange Your Currency</h1>
+    </div>
+    <div class="row">
+      <div class="col-5">
+        <form id="currencyForm">
+          <input type="number" id="inputValue">
+          <select name="inputCurrencyType" id="inputCurrencyType">
+            <option value="USD" selected="selected">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="JPY">JPY</option>
+            <option value="GBP">GBP</option>
+            <option value="AUD">AUD</option>
+            <option value="CAD">CAD</option>
+          </select>
+      </div>
+      <div class="col-2">
+        <div>Convert To:</div>
+      </div>
+      <div class="col-5">
+        <input type="number" id="outputValue" disabled>
+        <select name="outputCurrencyType" id="outputCurrencyType">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="JPY" selected="selected">JPY</option>
+          <option value="GBP">GBP</option>
+          <option value="AUD">AUD</option>
+          <option value="CAD">CAD</option>
+        </select>
+        </form>
+      </div>
+    </div>
+    <div class="row" id="error"></div>
+  </div>
 </body>
 
 </html>
