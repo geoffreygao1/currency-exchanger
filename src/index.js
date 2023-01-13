@@ -11,18 +11,23 @@ function convertCurrency(currency, value) {
         const errorMessage = `There was a problem accessing the currency conversion data from  ExchangeRate-API for ${currency}: ${currencyResponse['error-type']}`;
         throw new Error(errorMessage);
       }
-      printConversion(currencyResponse, currency, value)
+      printConversion(currencyResponse, value)
     })
     .catch(function (error) {
       printError(error);
     });
 }
 
+function calculateConversion(exchangeRate, value) {
+  return value * exchangeRate;
+}
+
 // UI Logic
+
 
 function handleFormSubmission() {
   const inputValue = document.getElementById("inputValue").value;
-  const inputCurrency = document.getElementById("inputCurrencyType").value;
+  const inputCurrencyType = document.getElementById("inputCurrencyType").value;
   convertCurrency(inputCurrencyType, inputValue);
 }
 
