@@ -11,9 +11,9 @@
 <body>
   <h1>Exchange Your Currency</h1>
   <form id="currencyForm">
-    <input type="number" id="inputValue">
+    <input type="number" id="inputValue" value="1">
     <select name="inputCurrencyType" id="inputCurrencyType">
-      <option value="USD" default>USD</option>
+      <option value="USD" selected="selected">USD</option>
       <option value="EUR">EUR</option>
       <option value="JPY">JPY</option>
       <option value="GBP">GBP</option>
@@ -22,10 +22,10 @@
     </select>
     <div>Convert To:</div>
     <input type="number" id="outputValue" disabled>
-    <select name="outputCurrencyType" id="outputputCurrencyType">
-      <option value="USD" default>USD</option>
+    <select name="outputCurrencyType" id="outputCurrencyType">
+      <option value="USD">USD</option>
       <option value="EUR">EUR</option>
-      <option value="JPY">JPY</option>
+      <option value="JPY" selected="selected">JPY</option>
       <option value="GBP">GBP</option>
       <option value="AUD">AUD</option>
       <option value="CAD">CAD</option>
