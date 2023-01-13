@@ -1,0 +1,31 @@
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 25px;
+  margin-top: 25%;
+}
+
+
+
+input[type=number] {
+  width: 100px;
+}
+
+#convertForm {
+  margin: 25px;
+}
+
+#inputForm {
+  text-align: right;
+}
+
+#outputForm {
+  text-align: left;
+}
+
+#convertSymbol {
+  text-align: center;
+  font-weight: bold;
+}

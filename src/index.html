@@ -2,9 +2,6 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Currency Exchanger</title>
 </head>
 
@@ -13,8 +10,8 @@
     <div class="row">
       <h1>Exchange Your Currency</h1>
     </div>
-    <div class="row">
-      <div class="col-5">
+    <div class="row" id="convertForm">
+      <div class="col-5" id="inputForm">
         <form id="currencyForm">
           <input type="number" id="inputValue">
           <select name="inputCurrencyType" id="inputCurrencyType">
@@ -26,10 +23,10 @@
             <option value="CAD">CAD</option>
           </select>
       </div>
-      <div class="col-2">
-        <div>Convert To:</div>
+      <div class="col-2" id="convertSymbol">
+        <div>&#8594;</div>
       </div>
-      <div class="col-5">
+      <div class="col-5" id="outputForm">
         <input type="number" id="outputValue" disabled>
         <select name="outputCurrencyType" id="outputCurrencyType">
           <option value="USD">USD</option>
