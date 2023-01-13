@@ -3,20 +3,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import ExchangeRateService from './services/exchange-rate-service.js';
 
-// Business Logic
 function convertCurrency(currency, value) {
-  ExchangeRateService.getExchangeRate(currency)
-    .then(function (currencyResponse) {
-      if (currencyResponse instanceof Error) {
-        const errorMessage = `There was a problem accessing the currency conversion data from  ExchangeRate-API for ${currency}: ${currencyResponse.message}`;
-        throw new Error(errorMessage);
-      }
-      sessionStorage.setItem("conversionRates", JSON.stringify(currencyResponse["conversion_rates"]));
-      printConversion(currencyResponse, value);
-    })
-    .catch(function (error) {
-      printError(error);
-    });
+  let promise = ExchangeRateService.getExchangeRate(currency);
+  promise.then(function (currencyResponse) {
+    sessionStorage.setItem("conversionRates", JSON.stringify(currencyResponse["conversion_rates"]));
+    printConversion(currencyResponse, value);
+  }, function (error) {
+    printError(error, currency);
+  });
 }
 
 function calculateConversion(exchangeRate, value) {
@@ -36,8 +30,9 @@ function printConversion(currencyResponse, value) {
   outputValue.value = calculateConversion(conversionRates[outputCurrencyType], value);
 }
 
-function printError(error) {
-  document.getElementById('error').innerText = error;
+function printError(error, currency) {
+  const errorMessage = `There was a problem accessing the currency conversion data from  ExchangeRate-API for ${currency}: ${error['error-type']}`;
+  document.getElementById('error').innerText = errorMessage;
 }
 
 function clearError() {
