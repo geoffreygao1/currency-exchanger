@@ -61,7 +61,8 @@ function updateFlags() {
   document.getElementById("outputFlag").append(outputFlag);
 }
 
-function handleInputSubmission() {
+function handleInputSubmission(event) {
+  event.preventDefault();
   clearError();
   updateFlags();
   const inputValue = document.getElementById("inputValue").value;
@@ -69,10 +70,10 @@ function handleInputSubmission() {
   convertCurrency(inputCurrencyType, inputValue);
 }
 
-function handleOutputSubmission() {
+function handleOutputSubmission(event) {
+  event.preventDefault();
   clearError();
   updateFlags();
-
   const inputValue = document.getElementById("inputValue").value;
   const outputCurrencyType = document.getElementById("outputCurrencyType").value;
   let outputValue = document.getElementById("outputValue");
