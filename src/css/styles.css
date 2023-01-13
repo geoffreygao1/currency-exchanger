@@ -7,10 +7,24 @@ h1 {
   margin-top: 25%;
 }
 
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+#inputFlag>img,
+#outputFlag>img {
+  height: 20px;
+  width: auto;
+}
 
 input[type=number] {
   width: 100px;
+}
+
+#convertSymbol {
+  font-size: 25px;
 }
 
 #convertForm {
