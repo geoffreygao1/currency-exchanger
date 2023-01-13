@@ -2,7 +2,7 @@
 
 #### By _Geoffrey Gao_
 
-#### _An application that will convert currencies_
+#### _An application that converts different currencies_
 
 ## Technologies Used
 
