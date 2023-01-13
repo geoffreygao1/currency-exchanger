@@ -1,6 +1,6 @@
 export default class ExchangeRateService {
-  static async getExchangeRate(query) {
-    return fetch(`http://api.giphy.com/v1/gifs/search?q=${query}&api_key=${process.env.API_KEY}&limit=5`)
+  static async getExchangeRate(currency) {
+    return fetch(`https://v6.exchangerate-api.com/v6/${API - KEY}/latest/${currency}`)
       .then(function (response) {
         if (!response.ok) {
           const errorMessage = `${response.status} ${response.statusText}`;
