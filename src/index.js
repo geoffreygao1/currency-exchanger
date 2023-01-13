@@ -19,7 +19,7 @@ function convertCurrency(currency, value) {
 }
 
 function calculateConversion(exchangeRate, value) {
-  return value * exchangeRate;
+  return (value * exchangeRate).toFixed(2);
 }
 
 // UI Logic
