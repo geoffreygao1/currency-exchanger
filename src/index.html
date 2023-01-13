@@ -12,7 +12,7 @@
     </div>
     <div class="row" id="convertForm">
       <div class="col-5" id="inputForm">
-        <form id="currencyForm">
+        <form id="inputCurrencyForm">
           <input type="number" id="inputValue">
           <select name="inputCurrencyType" id="inputCurrencyType">
             <option value="USD" selected="selected">USD</option>
@@ -22,20 +22,22 @@
             <option value="AUD">AUD</option>
             <option value="CAD">CAD</option>
           </select>
+        </form>
       </div>
       <div class="col-2" id="convertSymbol">
         <div>&#8594;</div>
       </div>
       <div class="col-5" id="outputForm">
-        <input type="number" id="outputValue" disabled>
-        <select name="outputCurrencyType" id="outputCurrencyType">
-          <option value="USD">USD</option>
-          <option value="EUR">EUR</option>
-          <option value="JPY" selected="selected">JPY</option>
-          <option value="GBP">GBP</option>
-          <option value="AUD">AUD</option>
-          <option value="CAD">CAD</option>
-        </select>
+        <form id="outputCurrencyForm">
+          <input type="number" id="outputValue" disabled>
+          <select name="outputCurrencyType" id="outputCurrencyType">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="JPY" selected="selected">JPY</option>
+            <option value="GBP">GBP</option>
+            <option value="AUD">AUD</option>
+            <option value="CAD">CAD</option>
+          </select>
         </form>
       </div>
     </div>

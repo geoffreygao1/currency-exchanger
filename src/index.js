@@ -11,6 +11,7 @@ function convertCurrency(currency, value) {
         const errorMessage = `There was a problem accessing the currency conversion data from  ExchangeRate-API for ${currency}: ${currencyResponse['error-type']}`;
         throw new Error(errorMessage);
       }
+      sessionStorage.setItem("conversionRates", JSON.stringify(currencyResponse["conversion_rates"]));
       printConversion(currencyResponse, value);
     })
     .catch(function (error) {
@@ -21,6 +22,12 @@ function convertCurrency(currency, value) {
 function calculateConversion(exchangeRate, value) {
   return (value * exchangeRate).toFixed(2);
 }
+
+function updateConversion(newCurrencyType, value) {
+  let conversionRates = JSON.parse(sessionStorage.getItem("conversionRates"));
+  return (value * conversionRates[newCurrencyType]).toFixed(2);
+}
+
 
 // UI Logic
 function printConversion(currencyResponse, value) {
@@ -38,13 +45,22 @@ function clearError() {
   document.getElementById('error').innerText = null;
 }
 
-function handleFormSubmission() {
+function handleInputSubmission() {
   clearError();
   const inputValue = document.getElementById("inputValue").value;
   const inputCurrencyType = document.getElementById("inputCurrencyType").value;
   convertCurrency(inputCurrencyType, inputValue);
 }
 
+function handleOutputSubmission() {
+  clearError();
+  const inputValue = document.getElementById("inputValue").value;
+  const outputCurrencyType = document.getElementById("outputCurrencyType").value;
+  let outputValue = document.getElementById("outputValue");
+  outputValue.value = updateConversion(outputCurrencyType, inputValue);
+}
+
 window.addEventListener("load", function () {
-  document.querySelector('form').addEventListener("change", handleFormSubmission);
+  document.querySelector('form#inputCurrencyForm').addEventListener("change", handleInputSubmission);
+  document.querySelector('form#outputCurrencyForm').addEventListener("change", handleOutputSubmission);
 });
