@@ -12,7 +12,7 @@
 * _Bootstrap_
 * _Webpack_
 * _NPM_
-* _API_
+* _API Calls_
 
 ## Description
 
