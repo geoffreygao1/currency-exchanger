@@ -8,7 +8,7 @@ function convertCurrency(currency, value) {
   ExchangeRateService.getExchangeRate(currency)
     .then(function (currencyResponse) {
       if (currencyResponse instanceof Error) {
-        const errorMessage = `There was a problem accessing the currency conversion data from  ExchangeRate-API for ${currency}: ${currencyResponse['error-type']}`;
+        const errorMessage = `There was a problem accessing the currency conversion data from  ExchangeRate-API for ${currency}: ${currencyResponse.message}`;
         throw new Error(errorMessage);
       }
       sessionStorage.setItem("conversionRates", JSON.stringify(currencyResponse["conversion_rates"]));
